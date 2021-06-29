@@ -4,11 +4,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import registerIcons from './lib/hooks/registerFaIcons';
 import { GlobalStyle } from './styles';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './styles/themes/theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

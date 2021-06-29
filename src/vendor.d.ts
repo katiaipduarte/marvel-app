@@ -1,4 +1,5 @@
 declare module 'styled-modern-normalize';
+declare module 'query-string';
 
 declare namespace NodeJS {
   interface Process {
