@@ -2,7 +2,7 @@
 
 exports[`<SearchBar /> component Unit Test should render Searchbar 1`] = `
 .c0 {
-  max-width: 16rem;
+  width: 75%;
   padding: 0.5rem;
   border-radius: 0.4rem;
   margin: 1rem auto 0;
@@ -87,6 +87,7 @@ exports[`<SearchBar /> component Unit Test should render Searchbar 1`] = `
     aria-label="Click to clear search"
     id="clear-search-term-btn"
     style="visibility: hidden;"
+    tabindex="0"
   >
     <svg
       aria-hidden="true"

@@ -17,24 +17,19 @@ const ListLayout = (props: Props): JSX.Element => {
   const [totalComics, setTotalComics] = useState<number>(0);
 
   useEffect(() => {
-    firstPageRequest();
+    setLoading(true);
+    getComics(1, characterId);
   }, []);
 
   useEffect(() => {
-    firstPageRequest();
+    setLoading(true);
+    getComics(1, characterId);
   }, [characterId]);
 
-  const firstPageRequest = (): void => {
-    if (characterId) {
-      getComics(1, characterId);
-    } else {
-      getComics(1);
-    }
-  };
-
-  const getComics = async (page: number, characterId?: number): Promise<void> => {
+  const getComics = async (page: number, characterId?: number | null): Promise<void> => {
     try {
-      const res = await ApiProvider().getComics(page, characterId);
+      const character = characterId ? characterId : undefined;
+      const res = await ApiProvider().getComics(page, character);
 
       const list: Comic[] = res ? (res.data.data.results as Comic[]) : [];
       const total: number = res ? res.data.data.total : 0;
@@ -51,7 +46,7 @@ const ListLayout = (props: Props): JSX.Element => {
 
   const onChangePage = (page: number): void => {
     setLoading(true);
-    getComics(page);
+    getComics(page, characterId);
   };
 
   const renderList = (): JSX.Element => {

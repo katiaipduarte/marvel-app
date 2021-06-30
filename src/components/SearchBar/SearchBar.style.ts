@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchBarContainer = styled.form`
-  max-width: 16rem;
+    width: 75%;
     padding: 0.5rem;
     border-radius: 0.4rem;
     margin: 1rem auto 0;
@@ -43,5 +43,3 @@ export const SearchBarContainer = styled.form`
     max-width: 32rem;
   }
 `;
-
-export const SearchOptions = styled.ul``;

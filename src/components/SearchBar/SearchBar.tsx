@@ -4,7 +4,8 @@ import lodash from 'lodash';
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import { Character } from '../../interfaces/character';
 import ApiProvider from '../../lib/services/api-provider';
-import { SearchBarContainer, SearchOptions } from './SearchBar.style';
+import CharacterList from '../CharacterList/CharacterList';
+import { SearchBarContainer } from './SearchBar.style';
 
 type Props = {
   find: (characterId: number | null) => void;
@@ -16,6 +17,7 @@ const SearchBar = (props: Props): JSX.Element => {
   const [showClearButton, setShowClearButton] = useState<boolean>(false);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const handleClearSearch = (): void => {
     setSearchTerm('');
@@ -30,6 +32,7 @@ const SearchBar = (props: Props): JSX.Element => {
     if (event.target.value.length >= 3) {
       setLoading(true);
       debounce(event.target.value);
+      setShowOptions(true);
     }
   };
 
@@ -49,22 +52,10 @@ const SearchBar = (props: Props): JSX.Element => {
     [],
   );
 
-  const renderSearchOptions = (): JSX.Element => {
-    return (
-      <>
-        {characters.map((character: Character) => (
-          <li
-            key={character.id}
-            onClick={() => find(character.id)}
-            onKeyPress={() => find(character.id)}
-            tabIndex={0}
-            role="button"
-          >
-            {character.name}
-          </li>
-        ))}
-      </>
-    );
+  const selectCharacter = (id: number, name: string): void => {
+    setSearchTerm(name);
+    find(id);
+    setShowOptions(false);
   };
 
   return (
@@ -93,13 +84,12 @@ const SearchBar = (props: Props): JSX.Element => {
           aria-label="Click to clear search"
           onClick={handleClearSearch}
           style={{ visibility: showClearButton ? 'initial' : 'hidden' }}
+          tabIndex={0}
         >
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </SearchBarContainer>
-      {searchTerm.length >= 3 && !loading && (
-        <SearchOptions>{characters.length === 0 ? <li>No results found</li> : renderSearchOptions()}</SearchOptions>
-      )}
+      {!loading && showOptions && <CharacterList characters={characters} selectCharacter={selectCharacter} />}
     </>
   );
 };

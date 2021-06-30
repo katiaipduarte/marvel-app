@@ -17,7 +17,6 @@ export const ComicsContainer = styled.section`
         align-items: center;
         display: flex;
         max-width: 12.5rem;
-        // max-height: rem;
         justify-content: center;
         flex: 1 1;
       }
