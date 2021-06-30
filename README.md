@@ -30,7 +30,7 @@ To use this app, first clone from GitHub via `git clone https://github.com/katia
 
 ### API Keys
 
-The API used is https://developer.marvel.com. Since it is free we just need to add the endpoint and use it.
+The API used is https://developer.marvel.com. You need to create an account and get the PUBLIC_KEY and PRIVATE_KEY
 
 ## Future Work
 

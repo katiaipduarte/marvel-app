@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ListContainer = styled.section`
+export const ComicsContainer = styled.section`
   .comics-list {
     display: grid;
     grid-gap: 1rem;

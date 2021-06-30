@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import moment from 'moment';
 import CryptoJS from 'crypto-js';
+import { Marvel } from '../../interfaces/marvel';
 
 const ApiProvider = () => {
   const timeStamp = moment().unix();
@@ -14,18 +15,23 @@ const ApiProvider = () => {
     responseType: 'json',
   });
 
-  const getComics = async (page: number): Promise<AxiosResponse<any>> => {
+  const getComics = async (page: number, characterId?: number): Promise<AxiosResponse<Marvel>> => {
     const count = 20;
     const currentPage = page || 1;
     const currentOffset = currentPage === 1 ? 0 : count * (page - 1);
 
-    const params = `limit=${count}&offset=${currentOffset}&orderBy=-modified&${auth}`;
+    let params = `limit=${count}&offset=${currentOffset}&orderBy=-modified&${auth}`;
+
+    if (characterId) {
+      params = params.concat(`&characters=${characterId}`);
+    }
 
     return request.get(`/comics?${params}`);
   };
 
-  const findCharacter = async (searchTerm: string) => {
-    return request.get(`/characters?nameStartsWith=${searchTerm}&${auth}`);
+  const findCharacter = async (searchTerm: string): Promise<AxiosResponse<Marvel>> => {
+    const count = 5;
+    return request.get(`/characters?limit=${count}nameStartsWith=${searchTerm}&${auth}`);
   };
 
   return {

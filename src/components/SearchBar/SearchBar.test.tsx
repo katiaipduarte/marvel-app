@@ -5,14 +5,14 @@ import 'jest-styled-components';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 describe('<SearchBar /> component Unit Test', () => {
-  const onSubmit = jest.fn();
+  const find = jest.fn();
 
   beforeEach(() => {
-    render(<SearchBar />);
+    render(<SearchBar find={find} />);
   });
 
   it('should render Searchbar', () => {
-    const { container } = render(<SearchBar />);
+    const { container } = render(<SearchBar find={find} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 

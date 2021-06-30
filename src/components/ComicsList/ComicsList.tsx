@@ -3,23 +3,40 @@ import { Comic } from '../../interfaces/comic';
 import ApiProvider from '../../lib/services/api-provider';
 import Loading from '../Loading/Loading';
 import Pagination from '../Pagination/Pagination';
-import { ListContainer } from './ListLayout.style';
+import { ComicsContainer } from './ComicsList.style';
 
-const ListLayout = (): JSX.Element => {
+type Props = {
+  characterId: number | null;
+};
+
+const ListLayout = (props: Props): JSX.Element => {
+  const { characterId } = props;
   const [comics, setComics] = useState<Comic[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [totalComics, setTotalComics] = useState<number>(0);
 
   useEffect(() => {
-    getComics(1);
+    firstPageRequest();
   }, []);
 
-  const getComics = async (page: number): Promise<void> => {
-    try {
-      const res = await ApiProvider().getComics(page);
+  useEffect(() => {
+    firstPageRequest();
+  }, [characterId]);
 
-      const list: Comic[] = res ? res.data.data.results : [];
+  const firstPageRequest = (): void => {
+    if (characterId) {
+      getComics(1, characterId);
+    } else {
+      getComics(1);
+    }
+  };
+
+  const getComics = async (page: number, characterId?: number): Promise<void> => {
+    try {
+      const res = await ApiProvider().getComics(page, characterId);
+
+      const list: Comic[] = res ? (res.data.data.results as Comic[]) : [];
       const total: number = res ? res.data.data.total : 0;
 
       setComics(list);
@@ -53,7 +70,7 @@ const ListLayout = (): JSX.Element => {
   };
 
   return (
-    <ListContainer>
+    <ComicsContainer>
       {loading ? (
         <Loading />
       ) : (
@@ -62,7 +79,7 @@ const ListLayout = (): JSX.Element => {
           <Pagination onChangePage={onChangePage} currentPage={currentPage} total={totalComics} />
         </>
       )}
-    </ListContainer>
+    </ComicsContainer>
   );
 };
 

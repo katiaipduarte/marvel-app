@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const SearchBarContainer = styled.form`
-    max-width: 32rem;
-    padding: 0.5rem 1rem;
+  max-width: 16rem;
+    padding: 0.5rem;
     border-radius: 0.4rem;
     margin: 1rem auto 0;
     background: ${({ theme }) => theme.body};
 
     &:focus-visible,
-    &:focus:not(:focus-visible) {
-      outline: auto;
+    &:focus {
+      outline: 2px solid black;
     }
-    
+
     input {
       border: none;
       color: ${({ theme }) => theme.text};
@@ -21,19 +21,27 @@ export const SearchBarContainer = styled.form`
       margin-left: 0.5rem; 
       background: transparent;
     }
+
     #search-term-btn,
     #clear-search-term-btn {
       background: none;
       border: none;
       cursor: pointer;
-      vertical-align: middle;
+      vertical-align: bottom;
       svg {
         color: ${({ theme }) => theme.text};
         height: 1rem;
+        width: 1rem;
       }
       &:focus {
         outline: none;
       }
     }
   }
+
+  @media (min-width: 768px) {
+    max-width: 32rem;
+  }
 `;
+
+export const SearchOptions = styled.ul``;
