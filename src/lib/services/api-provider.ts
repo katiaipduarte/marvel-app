@@ -10,7 +10,7 @@ const ApiProvider = () => {
   const auth = `apikey=${apiKey}&ts=${timeStamp}&hash=${hash}`;
 
   const request = axios.create({
-    baseURL: 'http://gateway.marvel.com/v1/public',
+    baseURL: process.env.REACT_APP_MARVEL_API_ENDPOINT,
     responseType: 'json',
   });
 

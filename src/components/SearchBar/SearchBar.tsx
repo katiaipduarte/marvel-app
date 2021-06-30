@@ -20,15 +20,7 @@ const SearchBar = (): JSX.Element => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
-    if (searchTerm.length >= 3) {
-      onClickSearchOption(searchTerm);
-    }
-  };
-
-  const onClickSearchOption = (item: string): void => {
-    if (item !== '') {
-      setSearchTerm(item);
-    }
+    setSearchTerm(searchTerm);
   };
 
   return (
