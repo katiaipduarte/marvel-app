@@ -6,11 +6,12 @@ export const PaginationContainer = styled.div`
   justify-content: center;
 
   .separator {
-    width: 2rem;
+    width: 1.5rem;
     margin: 0 0.25rem;
     cursor: default;
     color: ${({ theme }) => theme.primaryColor};
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .pageItem {

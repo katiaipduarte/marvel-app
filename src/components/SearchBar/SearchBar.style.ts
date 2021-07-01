@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchBarContainer = styled.form`
-    width: 75%;
+    width: 85%;
     padding: 0.5rem;
     border-radius: 0.4rem;
     margin: 1rem auto 0;
