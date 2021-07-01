@@ -4,7 +4,7 @@ WebApp to search for information about the comics from the Marvel world.
 
 Demo at: https://marvel-app-black.vercel.app/
 
-App created using [create-react-app](https://github.com/facebook/create-react-app), [TypeScript](https://www.typescriptlang.org/), [styled-components](https://styled-components.com/), [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) and for testing [Jest](https://jestjs.io/). Thank you for using my app.
+App created using [create-react-app](https://github.com/facebook/create-react-app), [TypeScript](https://www.typescriptlang.org/), [styled-components](https://styled-components.com/), [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) and for testing [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). Thank you for using my app.
 
 ## Table of Contents
 
@@ -34,7 +34,13 @@ The API used is https://developer.marvel.com. You need to create an account and 
 
 ## Future Work
 
-[ ]  <br>
+[ ]   Complete the unit tests cases<br>
+[ ]   Add e2e tests with Cypress<br>
+[ ]   Add a middleware to deal with the API and custom services<br>
+[ ]   Add authentication<br>
+[ ]   Connect the website to a database, so we can save the favourites for each user (currently done via cookies)<br>
+[ ]   Add user page, to check which are the favourite comics and characters<br>
+[ ]   Add more options for the search to work, i.e. by comic name, series...<br>
 
 ## Contributing
 
@@ -61,6 +67,7 @@ marvel-app/
     components/
     interfaces/
     lib/
+    store/
     styles/
       index.ts
     App.tsx
@@ -74,6 +81,7 @@ For the project to build, **these files must exist with exact filenames**:
 - `src/components` is the folder that houses all the components used.
 - `src/interfaces` is the folder with all the interfaces/type files used in the components.
 - `src/lib` is the folder for all the services, providers or hooks.
+- `src/store` is the folder with the redux logic.
 - `src/styles` is the folder with typography, reset and any other style rules shared by all React components.
 
 You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
