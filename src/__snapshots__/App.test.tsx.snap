@@ -9,7 +9,7 @@ exports[`the <App /> component should render correctly 1`] = `
   />
   <form
     aria-label="Search comics by character form"
-    class="sc-iCoGMd cBeWbc"
+    class="sc-iCoGMd kDgDSP"
     role="searchbox"
     tabindex="-1"
   >
