@@ -17,7 +17,7 @@ export const SearchBarContainer = styled.form`
       color: ${({ theme }) => theme.text};
       outline: none;
       font-size: 1rem;
-      width: calc(100% - 4rem);
+      width: calc(100% - 4.5rem);
       margin-left: 0.5rem; 
       background: transparent;
       white-space: nowrap;
