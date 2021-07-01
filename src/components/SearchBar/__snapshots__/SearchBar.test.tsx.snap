@@ -2,7 +2,7 @@
 
 exports[`<SearchBar /> component Unit Test should render Searchbar 1`] = `
 .c0 {
-  width: 75%;
+  width: 85%;
   padding: 0.5rem;
   border-radius: 0.4rem;
   margin: 1rem auto 0;

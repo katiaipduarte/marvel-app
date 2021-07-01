@@ -2,7 +2,7 @@
 
 exports[`the <Pagination /> component renders the component from the beginning 1`] = `
 <div
-  class="sc-bdnxRM iDIDZY"
+  class="sc-bdnxRM kQeUjh"
 >
   <button
     class="active pageItem"
@@ -49,7 +49,7 @@ exports[`the <Pagination /> component renders the component from the beginning 1
 
 exports[`the <Pagination /> component renders the component from the end 1`] = `
 <div
-  class="sc-bdnxRM iDIDZY"
+  class="sc-bdnxRM kQeUjh"
 >
   <button
     class="pageItem sides"
@@ -96,7 +96,7 @@ exports[`the <Pagination /> component renders the component from the end 1`] = `
 
 exports[`the <Pagination /> component renders the component from the middle 1`] = `
 <div
-  class="sc-bdnxRM iDIDZY"
+  class="sc-bdnxRM kQeUjh"
 >
   <button
     class="pageItem sides"
