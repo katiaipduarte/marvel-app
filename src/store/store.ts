@@ -12,7 +12,7 @@ const combinedReducer = combineReducers<GlobalState>({
 });
 
 const bindMiddleware = (middleware: any) => {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.REACT_APP_NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension');
     return composeWithDevTools(applyMiddleware(...middleware));
   }

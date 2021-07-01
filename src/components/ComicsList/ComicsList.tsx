@@ -24,11 +24,6 @@ const ListLayout = (props: Props): JSX.Element => {
   useEffect(() => {
     setLoading(true);
     getComics(1, characterId);
-  }, []);
-
-  useEffect(() => {
-    setLoading(true);
-    getComics(1, characterId);
   }, [characterId]);
 
   const getComics = async (page: number, characterId?: number | null): Promise<void> => {
