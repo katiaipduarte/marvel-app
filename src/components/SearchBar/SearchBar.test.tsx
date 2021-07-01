@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import React from 'react';
 import SearchBar from './SearchBar';
 import 'jest-styled-components';
 import { fireEvent, render, screen } from '@testing-library/react';

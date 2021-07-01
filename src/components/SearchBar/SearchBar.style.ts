@@ -20,6 +20,9 @@ export const SearchBarContainer = styled.form`
       width: calc(100% - 4rem);
       margin-left: 0.5rem; 
       background: transparent;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     #search-term-btn,

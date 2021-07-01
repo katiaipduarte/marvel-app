@@ -16,7 +16,7 @@ export const FooterContainer = styled.footer`
           margin: 0 0.75rem;
         }
         &:hover {
-          color: ${({ theme }) => theme.primaryColor};
+          color: ${({ theme }) => theme.primaryColor} !important;
         }
       }
     }
@@ -32,7 +32,7 @@ export const FooterContainer = styled.footer`
       }
       a {
         &:hover {
-          color: ${({ theme }) => theme.primaryColor};
+          color: ${({ theme }) => theme.primaryColor} !important;
         }
       }
     }

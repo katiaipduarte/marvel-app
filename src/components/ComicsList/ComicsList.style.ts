@@ -46,6 +46,12 @@ export const ComicsContainer = styled.section`
         }
       }
 
+      &:hover:not(&:focus, &:focus-visible) {
+        .information {
+          border-bottom: 0.5rem solid ${({ theme }) => theme.primaryColor};
+        }
+      }
+
       .information {
         position: absolute;
         bottom: 0;

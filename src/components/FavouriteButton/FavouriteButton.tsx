@@ -22,7 +22,7 @@ const FavouriteButton = (props: Props): JSX.Element => {
     setShowFavButton(true);
   };
 
-  const onUnfavouriteLocation = (): void => {
+  const onUnfavourite = (): void => {
     dispatch(deleteFavourite(comicId));
     setShowFavButton(false);
   };
@@ -30,9 +30,9 @@ const FavouriteButton = (props: Props): JSX.Element => {
   return (
     <>
       <FavouriteButtonContainer
-        onClick={onUnfavouriteLocation}
+        onClick={onUnfavourite}
         style={{ display: showFavButton ? 'flex' : 'none' }}
-        title="Unfavourite Location"
+        title="Unfavourite Comic"
         aria-label="Unfavourite Comic"
         className="unfavourite-btn"
       >
@@ -41,7 +41,7 @@ const FavouriteButton = (props: Props): JSX.Element => {
       <FavouriteButtonContainer
         onClick={onFavourite}
         style={{ display: showFavButton ? 'none' : 'flex' }}
-        title="Favourite Location"
+        title="Favourite Comic"
         aria-label="Favourite Comic"
         className="favourite-btn"
       >

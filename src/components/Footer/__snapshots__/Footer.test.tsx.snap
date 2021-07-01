@@ -30,6 +30,10 @@ exports[`the <Footer /> component should render correctly 1`] = `
   margin: 0 0.75rem;
 }
 
+.c0 .container .social-icons a:hover {
+  color: !important;
+}
+
 .c0 .container .general-information,
 .c0 .container .api-info {
   display: -webkit-box;
@@ -45,6 +49,11 @@ exports[`the <Footer /> component should render correctly 1`] = `
 .c0 .container .general-information p,
 .c0 .container .api-info p {
   margin: 0 0.5rem;
+}
+
+.c0 .container .general-information a:hover,
+.c0 .container .api-info a:hover {
+  color: !important;
 }
 
 <footer

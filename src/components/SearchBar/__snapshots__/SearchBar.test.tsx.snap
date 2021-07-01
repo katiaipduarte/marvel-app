@@ -20,6 +20,9 @@ exports[`<SearchBar /> component Unit Test should render Searchbar 1`] = `
   width: calc(100% - 4rem);
   margin-left: 0.5rem;
   background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c0 #search-term-btn,

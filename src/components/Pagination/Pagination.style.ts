@@ -33,6 +33,10 @@ export const PaginationContainer = styled.div`
     &:focus {
       outline: 0;
     }
+
+    &:not(.active):not(.sides):not(&:nth-last-child(2)) {
+      display: none;
+    }
   }
 
   .active {
@@ -47,6 +51,12 @@ export const PaginationContainer = styled.div`
     &:hover {
       text-decoration: none;
       box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .pageItem {
+      display: initial !important;
     }
   }
 `;

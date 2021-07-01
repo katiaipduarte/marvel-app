@@ -30,7 +30,7 @@ exports[`the <FavouriteButton /> component should render favourite button correc
   aria-label="Unfavourite Comic"
   class="c0 unfavourite-btn"
   style="display: flex;"
-  title="Unfavourite Location"
+  title="Unfavourite Comic"
 >
   <svg
     aria-hidden="true"
@@ -80,7 +80,7 @@ exports[`the <FavouriteButton /> component should render unfavourite button corr
   aria-label="Unfavourite Comic"
   class="c0 unfavourite-btn"
   style="display: none;"
-  title="Unfavourite Location"
+  title="Unfavourite Comic"
 >
   <svg
     aria-hidden="true"

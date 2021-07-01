@@ -8,7 +8,7 @@ export const SearchOptions = styled.ul`
   width: 75%;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  padding: 1rem 0;
+  padding: 0 0 1rem;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -17,13 +17,15 @@ export const SearchOptions = styled.ul`
   text-align: center;
   z-index: 1;
   top: 7.45rem;
+  box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
 
   li {
     height: 1rem;
     width: 100%;
     vertical-align: middle;
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem;
     cursor: pointer;
+    padding: 0 0.5rem;
 
     p {
       width: inherit;

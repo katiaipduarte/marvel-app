@@ -10,8 +10,6 @@ describe('Test Suite for Favourites Store Reducer', () => {
     const favourites: number[] = [];
     const init = {
       type: FavouritesType.INIT_FAVOURITES,
-      error: undefined,
-      meta: undefined,
       payload: favourites,
     };
 
@@ -23,20 +21,16 @@ describe('Test Suite for Favourites Store Reducer', () => {
 
     const addFavouriteAction = {
       type: FavouritesType.ADD_FAVOURITE,
-      error: undefined,
-      meta: undefined,
-      payload: location,
+      payload: id,
     };
-    // expect(favouritesReducer(FAVOURITES_INITIAL_STATE, addFavouriteAction).favourites).toEqual([id]);
+    expect(favouritesReducer(FAVOURITES_INITIAL_STATE, addFavouriteAction).favourites).toEqual([id]);
   });
 
-  it('should update favourites by removing a location', () => {
+  it('should update favourites by removing an id', () => {
     const id = 1000;
 
     const deleteFavouriteAction = {
       type: FavouritesType.DELETE_FAVOURITE,
-      error: undefined,
-      meta: undefined,
       payload: id,
     };
     expect(favouritesReducer(FAVOURITES_INITIAL_STATE, deleteFavouriteAction).favourites).toEqual([]);
