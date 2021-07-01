@@ -55,7 +55,9 @@
       "src/styles",
       "src/interfaces",
       "src/serviceWorker.ts",
-      "src/setupTests.ts"
+      "src/setupTests.ts",
+      "src/reportWebVitals.ts",
+      "src/index.tsx"
     ]
   },
   "browserslist": {

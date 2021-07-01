@@ -4,8 +4,8 @@ export type Comic = {
   title: string;
   issueNumber: number;
   variantDescription: string;
-  description: string;
-  modified: Date;
+  description: string | null;
+  modified: string;
   isbn: string;
   upc: string;
   diamondCode: string;
@@ -13,109 +13,75 @@ export type Comic = {
   issn: string;
   format: string;
   pageCount: number;
-  textObjects: [
-    {
-      type: string;
-      language: string;
-      text: string;
-    },
-  ];
+  textObjects: TextObj[];
   resourceURI: string;
-  urls: [
-    {
-      type: string;
-      url: string;
-    },
-  ];
-  series: {
-    resourceURI: string;
-    name: string;
-  };
-  variants: [
-    {
-      resourceURI: string;
-      name: string;
-    },
-  ];
-  collections: [
-    {
-      resourceURI: string;
-      name: string;
-    },
-  ];
-  collectedIssues: [
-    {
-      resourceURI: string;
-      name: string;
-    },
-  ];
-  dates: [
-    {
-      type: string;
-      date: 'Date';
-    },
-  ];
-  prices: [
-    {
-      type: string;
-      price: 'float';
-    },
-  ];
+  urls: Urls[];
+  series: Items;
+  variants: Items[];
+  collections: Items[];
+  collectedIssues: Items[];
+  dates: Dates[];
+  prices: Prices[];
   thumbnail: {
     path: string;
     extension: string;
   };
-  images: [
-    {
-      path: string;
-      extension: string;
-    },
-  ];
+  images: Images[];
   creators: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-        role: string;
-      },
-    ];
+    items: Items[];
   };
   characters: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-        role: string;
-      },
-    ];
+    items: Items[];
   };
   stories: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-        type: string;
-      },
-    ];
+    items: Items[];
   };
   events: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-      },
-    ];
+    items: Items[];
   };
+};
+
+type Items = {
+  resourceURI: string;
+  name: string;
+  type?: string;
+  role?: string;
+};
+
+type Urls = {
+  type: string;
+  url: string;
+};
+
+type TextObj = {
+  type: string;
+  language: string;
+  text: string;
+};
+
+type Dates = {
+  type: string;
+  date: string;
+};
+
+type Prices = {
+  type: string;
+  price: number;
+};
+
+type Images = {
+  path: string;
+  extension: string;
 };
