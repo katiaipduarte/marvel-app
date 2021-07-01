@@ -1,5 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`the <CharacterList /> component should render a list with characters 1`] = `
+.c0 {
+  list-style: none;
+  height: auto;
+  background: white;
+  border-style: none;
+  width: 75%;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  padding: 1rem 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  top: 7.45rem;
+}
+
+.c0 li {
+  height: 1rem;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.c0 li p {
+  width: inherit;
+  padding: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 32rem;
+  }
+}
+
+<ul
+  class="c0"
+  role="list"
+  tabindex="-1"
+>
+  <li
+    role="button"
+    tabindex="0"
+  >
+    <p
+      data-testid="character-name"
+    >
+      Spider-Man
+    </p>
+  </li>
+  <li
+    role="button"
+    tabindex="0"
+  >
+    <p
+      data-testid="character-name"
+    >
+      Black Widow
+    </p>
+  </li>
+</ul>
+`;
+
 exports[`the <CharacterList /> component should render correctly a "No results found" message 1`] = `
 .c0 {
   list-style: none;
@@ -9,8 +82,15 @@ exports[`the <CharacterList /> component should render correctly a "No results f
   width: 75%;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  margin: 0 auto;
   padding: 1rem 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  top: 7.45rem;
 }
 
 .c0 li {

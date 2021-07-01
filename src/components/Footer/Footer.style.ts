@@ -21,7 +21,7 @@ export const FooterContainer = styled.footer`
       }
     }
     .general-information,
-    .github-project-info {
+    .api-info {
       display: flex;
       margin-bottom: 0.5rem;
       font-size: 1rem;

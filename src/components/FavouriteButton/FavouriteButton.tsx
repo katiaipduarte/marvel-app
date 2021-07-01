@@ -1,28 +1,48 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { FavouriteButtonContainer } from './FavouriteButton.style';
+import { useDispatch } from 'react-redux';
+import { addFavourite, deleteFavourite } from '../../store/favourites/action';
 
-const FavouriteButton = (): JSX.Element => {
-  const [showFavButton, setShowFavButton] = useState<boolean>(false);
+type Props = {
+  comicId: number;
+  status: boolean;
+};
+
+const FavouriteButton = (props: Props): JSX.Element => {
+  const { comicId, status } = props;
+  const [showFavButton, setShowFavButton] = useState<boolean>(status);
+  const dispatch = useDispatch();
+  // const [cookies, setCookie] = useCookies([favourites.cookie_key]);
+
+  const onFavourite = (): void => {
+    dispatch(addFavourite(comicId));
+    setShowFavButton(true);
+  };
+
+  const onUnfavouriteLocation = (): void => {
+    dispatch(deleteFavourite(comicId));
+    setShowFavButton(false);
+  };
 
   return (
     <>
       <FavouriteButtonContainer
-        onClick={() => setShowFavButton(false)}
+        onClick={onUnfavouriteLocation}
         style={{ display: showFavButton ? 'flex' : 'none' }}
         title="Unfavourite Location"
-        aria-label="Unfavourite Location"
+        aria-label="Unfavourite Comic"
         className="unfavourite-btn"
       >
         <FontAwesomeIcon icon={faHeart} />
       </FavouriteButtonContainer>
       <FavouriteButtonContainer
-        onClick={() => setShowFavButton(true)}
+        onClick={onFavourite}
         style={{ display: showFavButton ? 'none' : 'flex' }}
         title="Favourite Location"
-        aria-label="Favourite Location"
+        aria-label="Favourite Comic"
         className="favourite-btn"
       >
         <FontAwesomeIcon icon={farHeart} />
@@ -31,4 +51,4 @@ const FavouriteButton = (): JSX.Element => {
   );
 };
 
-export default FavouriteButton;
+export default memo(FavouriteButton);

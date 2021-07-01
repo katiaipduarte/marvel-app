@@ -8,8 +8,15 @@ export const SearchOptions = styled.ul`
   width: 75%;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  margin: 0 auto;
   padding: 1rem 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  top: 7.45rem;
 
   li {
     height: 1rem;

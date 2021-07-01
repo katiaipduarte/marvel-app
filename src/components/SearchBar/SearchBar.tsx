@@ -23,6 +23,7 @@ const SearchBar = (props: Props): JSX.Element => {
     setSearchTerm('');
     setShowClearButton(false);
     find(null);
+    setShowOptions(false);
   };
 
   const handleChange = async (event: ChangeEvent<HTMLInputElement>): Promise<void> => {
@@ -32,8 +33,9 @@ const SearchBar = (props: Props): JSX.Element => {
     if (event.target.value.length >= 3) {
       setLoading(true);
       debounce(event.target.value);
-      setShowOptions(true);
     }
+
+    setShowOptions(event.target.value.length >= 3);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {

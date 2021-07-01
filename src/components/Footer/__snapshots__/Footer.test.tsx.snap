@@ -31,7 +31,7 @@ exports[`the <Footer /> component should render correctly 1`] = `
 }
 
 .c0 .container .general-information,
-.c0 .container .github-project-info {
+.c0 .container .api-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,7 +43,7 @@ exports[`the <Footer /> component should render correctly 1`] = `
 }
 
 .c0 .container .general-information p,
-.c0 .container .github-project-info p {
+.c0 .container .api-info p {
   margin: 0 0.5rem;
 }
 
@@ -124,20 +124,20 @@ exports[`the <Footer /> component should render correctly 1`] = `
          • 
       </p>
       <a
-        aria-label="Link to web app homepage"
-        href="/"
-      >
-        Homepage
-      </a>
-    </div>
-    <div
-      class="github-project-info"
-    >
-      <a
         aria-label="Link to project github repo"
         href="https://github.com/katiaipduarte/marvel-app"
       >
         Marvel App
+      </a>
+    </div>
+    <div
+      class="api-info"
+    >
+      <a
+        aria-label="Link to Marvel API used"
+        href="hhttps://developer.marvel.com/"
+      >
+        Marvel API
       </a>
     </div>
   </div>

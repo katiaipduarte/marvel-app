@@ -17,13 +17,13 @@ const Footer = (): JSX.Element => {
           <p>{` • `}</p>
           <p tabIndex={0}>{`© ${new Date().getFullYear()}`}</p>
           <p>{` • `}</p>
-          <a href="/" aria-label="Link to web app homepage">
-            Homepage
-          </a>
-        </div>
-        <div className="github-project-info">
           <a href="https://github.com/katiaipduarte/marvel-app" aria-label="Link to project github repo">
             Marvel App
+          </a>
+        </div>
+        <div className="api-info">
+          <a href="hhttps://developer.marvel.com/" aria-label="Link to Marvel API used">
+            Marvel API
           </a>
         </div>
       </div>

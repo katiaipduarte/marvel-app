@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the <Pagination /> component renders the component from the beginning 1`] = `
+<div
+  class="sc-bdnxRM lfNxan"
+>
+  <button
+    class="active pageItem"
+    data-testid="button"
+    type="button"
+  >
+    1
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    2
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    3
+  </button>
+  <div
+    class="separator"
+  >
+    ...
+  </div>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    5
+  </button>
+  <button
+    class="pageItem sides"
+    data-testid="button"
+    type="button"
+  >
+    &gt;
+  </button>
+</div>
+`;
+
+exports[`the <Pagination /> component renders the component from the end 1`] = `
+<div
+  class="sc-bdnxRM lfNxan"
+>
+  <button
+    class="pageItem sides"
+    data-testid="button"
+    type="button"
+  >
+    &lt;
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    1
+  </button>
+  <div
+    class="separator"
+  >
+    ...
+  </div>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    3
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    4
+  </button>
+  <button
+    class="active pageItem"
+    data-testid="button"
+    type="button"
+  >
+    5
+  </button>
+</div>
+`;
+
+exports[`the <Pagination /> component renders the component from the middle 1`] = `
+<div
+  class="sc-bdnxRM lfNxan"
+>
+  <button
+    class="pageItem sides"
+    data-testid="button"
+    type="button"
+  >
+    &lt;
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    1
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    2
+  </button>
+  <button
+    class="pageItem active"
+    data-testid="button"
+    type="button"
+  >
+    3
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    4
+  </button>
+  <button
+    class="pageItem"
+    data-testid="button"
+    type="button"
+  >
+    5
+  </button>
+  <button
+    class="pageItem sides"
+    data-testid="button"
+    type="button"
+  >
+    &gt;
+  </button>
+</div>
+`;

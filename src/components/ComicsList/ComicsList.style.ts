@@ -13,6 +13,7 @@ export const ComicsContainer = styled.section`
       display: flex;
       justify-content: center;
       cursor: pointer;
+      position: relative;
       img {
         align-items: center;
         display: flex;
@@ -24,6 +25,43 @@ export const ComicsContainer = styled.section`
       &:focus,
       &:focus-visible {
         outline: 0.5rem solid ${({ theme }) => theme.primaryColor};
+      }
+
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        img {
+          -webkit-filter: brightness(40%);
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+        }
+        .information {
+          height: 4rem;
+        }
+        .unfavourite-btn svg {
+          color: white !important;
+        }
+      }
+
+      .information {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: 0.5s ease;
+        padding: 0 0.25rem;
+        p {
+          text-transformation: uppercase;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
       }
     }
 

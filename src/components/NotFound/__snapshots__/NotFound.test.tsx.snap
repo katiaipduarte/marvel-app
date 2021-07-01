@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the <NotFound /> component should render correctly 1`] = `
+.c0 {
+  width: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+<div
+  class="c0"
+>
+  <h1>
+    No stories found for that search. Please try another character!
+  </h1>
+  <svg
+    version="1.1"
+    viewBox="0 0 120 120"
+    x="0px"
+    xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    y="0px"
+  >
+    <path
+      d="M36.4,112.8c7.1,3.6,15.1,5.7,23.6,5.7c28.5,0,51.6-23.1,51.6-51.6c0-18-9.2-33.9-23.2-43.1l0,10 c9.3,8,15.2,19.8,15.2,33.1c0,24.1-19.5,43.6-43.6,43.6c-7.4,0-14.3-1.8-20.4-5L36.4,112.8z"
+      id="avengers1"
+    />
+    <path
+      d="M84,1L84,72L69.5,58.3L69.5,27.8L51.9,69.6L69.5,69.6L69.5,63L85.7,78.3L69,91.1L69,84.6L45.6,84.6L30.3,119L11.3,119L68.4,1"
+      id="avengers3"
+    />
+    <path
+      d="M22.3,88.8c-3.7-6.4-5.8-13.9-5.8-21.8c0-21.9,16.1-40,37.1-43.1l4.1-8.4C30.2,16.7,8.4,39.3,8.4,67 c0,11.3,3.6,21.7,9.8,30.2L22.3,88.8z"
+      id="avengers2"
+    />
+  </svg>
+</div>
+`;

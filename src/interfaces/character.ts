@@ -2,14 +2,9 @@ export type Character = {
   id: number;
   name: string;
   description: string;
-  modified: Date;
+  modified: string;
   resourceURI: string;
-  urls: [
-    {
-      type: string;
-      url: string;
-    },
-  ];
+  urls: Urls[];
   thumbnail: {
     path: string;
     extension: string;
@@ -18,45 +13,35 @@ export type Character = {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-      },
-    ];
+    items: Items[];
   };
   stories: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-        type: string;
-      },
-    ];
+    items: Items[];
   };
   events: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-      },
-    ];
+    items: Items[];
   };
   series: {
     available: number;
     returned: number;
     collectionURI: string;
-    items: [
-      {
-        resourceURI: string;
-        name: string;
-      },
-    ];
+    items: Items[];
   };
+};
+
+type Items = {
+  resourceURI: string;
+  name: string;
+  type?: string;
+};
+
+type Urls = {
+  type: string;
+  url: string;
 };

@@ -30,8 +30,7 @@ const ApiProvider = () => {
   };
 
   const findCharacter = async (searchTerm: string): Promise<AxiosResponse<Marvel>> => {
-    const count = 5;
-    return request.get(`/characters?name=${searchTerm}&${auth}`);
+    return request.get(`/characters?nameStartsWith=${searchTerm}&${auth}`);
   };
 
   return {
