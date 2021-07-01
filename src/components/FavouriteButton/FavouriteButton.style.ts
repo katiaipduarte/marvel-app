@@ -6,7 +6,7 @@ export const FavouriteButtonContainer = styled.button`
   border: none;
   height: 2rem;
   width: 3rem;
-  top: 0;
+  top: 0.5rem;
   right: 0;
 
   &:focus,

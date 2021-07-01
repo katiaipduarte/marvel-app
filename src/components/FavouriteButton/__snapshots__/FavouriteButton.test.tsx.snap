@@ -7,7 +7,7 @@ exports[`the <FavouriteButton /> component should render favourite button correc
   border: none;
   height: 2rem;
   width: 3rem;
-  top: 0;
+  top: 0.5rem;
   right: 0;
 }
 
@@ -57,7 +57,7 @@ exports[`the <FavouriteButton /> component should render unfavourite button corr
   border: none;
   height: 2rem;
   width: 3rem;
-  top: 0;
+  top: 0.5rem;
   right: 0;
 }
 

@@ -1,10 +1,13 @@
-import React, { memo, useState } from 'react';
+import { memo, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+import { useCookies } from 'react-cookie';
+
 import { FavouriteButtonContainer } from './FavouriteButton.style';
-import { useDispatch } from 'react-redux';
 import { addFavourite, deleteFavourite } from '../../store/favourites/action';
+import { GlobalState } from '../../store/store';
 
 type Props = {
   comicId: number;
@@ -14,8 +17,13 @@ type Props = {
 const FavouriteButton = (props: Props): JSX.Element => {
   const { comicId, status } = props;
   const [showFavButton, setShowFavButton] = useState<boolean>(status);
+  const favourites = useSelector((state: GlobalState) => state.favouritesState);
   const dispatch = useDispatch();
-  // const [cookies, setCookie] = useCookies([favourites.cookie_key]);
+  const [cookies, setCookie] = useCookies([favourites.cookie_key]);
+
+  useEffect(() => {
+    setCookie(favourites.cookie_key, favourites.favourites);
+  }, [favourites.favourites]);
 
   const onFavourite = (): void => {
     dispatch(addFavourite(comicId));
